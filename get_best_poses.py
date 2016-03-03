@@ -13,7 +13,7 @@ def main_params(in_dir, out_dir):
         os.mkdir(out_dir)
 
     p_dock = re.compile("^dock[0-9]*$")
-    p_file = re.compile("^best-[0-9.]*_.*$")
+    p_file = re.compile("^best-{0,1}[0-9.]*_.*$")
     dock_dirs = [d for d in os.listdir(in_dir) if os.path.isdir(os.path.join(in_dir, d)) and re.match(p_dock, d)]
     for d in dock_dirs:
         best_score = 1000
