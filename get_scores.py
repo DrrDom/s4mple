@@ -12,8 +12,11 @@ def main_params(in_dir):
     dock_dirs = [d for d in os.listdir(in_dir) if os.path.isdir(os.path.join(in_dir, d)) and re.match(p, d)]
     dock_dirs_number = [int(d[4:]) for d in dock_dirs]
     for d in sorted(dock_dirs_number):
-        v = open(os.path.join(in_dir, 'dock' + str(d), 'score')).readline().strip().split(' ')[-1]
-        print(v)
+        try:
+            v = open(os.path.join(in_dir, 'dock' + str(d), 'score')).readline().strip().split(' ')[-1]
+            print(v)
+        except FileNotFoundError:
+            print('')
 
 
 def main():
