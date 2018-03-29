@@ -1,4 +1,4 @@
-Python scripts to handle S4MPLE docking results
+Scripts to handle S4MPLE docking results
 
 #### License
 MIT
