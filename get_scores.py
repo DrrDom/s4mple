@@ -14,9 +14,9 @@ def main_params(in_dir):
     for d in sorted(dock_dirs_number):
         try:
             v = open(os.path.join(in_dir, 'dock' + str(d), 'score')).readline().strip().split(' ')[-1]
-            print(v)
+            print(v, d)
         except FileNotFoundError:
-            print('')
+            print('', d)
 
 
 def main():
